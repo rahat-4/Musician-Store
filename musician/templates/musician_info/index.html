@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% if user.is_authenticated %}
+<ul>
+    {% for musician in musician_list %}
+    <li>
+        <a href={% url 'musician_info:musician_detail' musician.id %}><h4>{{ musician.first_name }} {{ musician.last_name }}</h4></a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<div class="alert alert-danger">You are not logged in!</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<form action={% url 'login_app:login_func' %} method="POST">
+  {% csrf_token %}
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+      <br>
+      <button type="submit" class="btn btn-primary btn-sm">Login</button>
+    </div>
+  </form>
+  <!-- <form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Submit" name="submit" class=""btn btn-primary btn="sm">
+    
+  </form> -->
+{% endblock %}

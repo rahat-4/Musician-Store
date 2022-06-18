@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% if album.pk %}
+<h1>Update Album:</h1>
+{% else %}
+<h1>Add Album: </h1>
+{% endif %}
+<!-- {% if success %}
+<p class="alert alert-success">{{ success }}</p>
+{% endif %} -->
+<!-- <form method="POST">
+    {{ album_form.as_p }}
+    {% csrf_token %}
+    <button class="btn btn-info btn-md" type="submit" name="submit" value="submit">ADD</button>
+</form> -->
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="submit" name="submit" class="btn btn-warning btn-md">
+</form>
+{% endblock %}

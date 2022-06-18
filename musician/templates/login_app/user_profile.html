@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+{% if user.is_authenticated %}
+<p>NAME: {{ user.username }}</p>
+<p>FACEBOOK ID: <a href="{{ user_info.facebook_id }}">press here</a></p>
+<img src="/media/{{ user_info.profile_pic }}" alt="" width="500px">
+{% endif %}
+{% endblock %}
